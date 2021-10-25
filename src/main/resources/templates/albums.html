@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+
 <table cellpadding="20px"  border="1px solid black">
     <tr>
         <td></td>
@@ -13,7 +14,7 @@
         <td>Songs</td>
         <td>length</td>
     </tr>
-    <tr th:each ="album: ${albums}" border="1px solid black">
+    <tr th:each ="album: ${album}" border="1px solid black">
         <td border="1px solid black" ><img th:src="${album.imageUrl}" width="119px" height="119px"></td>
         <td th:text = "${album.title}" border="1px solid black"></td>
         <td th:text = "${album.artist}" border="1px solid black"></td>
