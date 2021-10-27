@@ -32,7 +32,7 @@ public class SongrController {
     }
 
     @GetMapping("/albums")
-    public String getBooks(Model model){
+    public String getAlbums(Model model){
         System.out.println(albumRepository.findAll());
         model.addAttribute("album",albumRepository.findAll());
         return "albums";
@@ -42,12 +42,7 @@ public class SongrController {
         return "form";
     }
     @PostMapping("/addAlbum")
-    public RedirectView addAlbum(@RequestParam(value="title") String title,
-                                 @RequestParam(value="artist")String artist,
-                                 @RequestParam(value="songCount") int songCount,
-                                 @RequestParam(value="length") int length,
-                                 @RequestParam(value="imageUrl") String imageUrl){
-        Album album = new Album(title, artist, songCount,length, imageUrl );
+    public RedirectView addAlbum(Album album){
         albumRepository.save(album);
         return new RedirectView("/albums");
 

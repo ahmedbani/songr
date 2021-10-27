@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Songs</title>
+</head>
+<body>
+<h2>Songs</h2>
+<table cellpadding="20px"  border="1px solid black">
+    <tr>
+        <td>Title</td>
+        <td>length</td>
+        <td>Track Number</td>
+    </tr>
+    <tr th:each ="song: ${songs}" border="1px solid black">
+        <td th:text = "${song.title}" border="1px solid black"></td>
+        <td th:text = "${song.length}" border="1px solid black"></td>
+        <td th:text = "${song.trackNumber}" border="1px solid black"></td>
+    </tr>
+</table>
+</body>
+</html>

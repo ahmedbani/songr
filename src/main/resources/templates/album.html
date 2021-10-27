@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>album</title>
+</head>
+<body>
+<div>
+  <img th:src="${album.imageUrl}">
+    <p>Album Title: <span th:text="${album.title}"></span></p>
+    <p>Artist: <span th:text="${album.artist}"></span></p>
+    <p>Song Count: <span th:text="${album.songCount}"></span></p>
+    <p>Album ID: <span th:text="${album.getId}"></span></p>
+</div>
+<br/>
+<br/>
+<form action="/addSong" method="post">
+    <div>
+        <label>Title : <input  type="text" name="title" required="required"/></label>
+        <br/>
+        <label>Length : <input type="number" name="length" required="required"/></label>
+        <br/>
+        <label>Track Number : <input type="number" name="trackNumber" required="required"/></label>
+        <br/>
+        <label>Album ID : <input type="number" name="albumId" required="required"/></label>
+        <br/>
+        <input type="submit" value="Add song">
+    </div>
+
+    <table cellpadding="20px"  border="1px solid black">
+        <tr>
+            <td>Title</td>
+            <td>length</td>
+            <td>Track Number</td>
+        </tr>
+        <tr th:each ="song: ${album.songs}" border="1px solid black">
+            <td th:text = "${song.title}" border="1px solid black"></td>
+            <td th:text = "${song.length}" border="1px solid black"></td>
+            <td th:text = "${song.trackNumber}" border="1px solid black"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

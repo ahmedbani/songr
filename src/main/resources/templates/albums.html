@@ -20,6 +20,7 @@
         <td th:text = "${album.artist}" border="1px solid black"></td>
         <td th:text = "${album.songCount}" border="1px solid black"></td>
         <td th:text = "${album.length}" border="1px solid black"></td>
+        <td><button><a th:href="'songs/'+${album.getId}">Add Song</a></button></td>
     </tr>
 </table>
 </body>
